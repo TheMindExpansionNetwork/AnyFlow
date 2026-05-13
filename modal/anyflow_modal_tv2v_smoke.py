@@ -15,6 +15,7 @@ import json
 import os
 import platform
 import subprocess
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -111,7 +112,10 @@ def run_tv2v_smoke(
 ) -> dict[str, Any]:
     started = time.time()
     os.chdir(REMOTE_REPO)
-    os.environ["PYTHONPATH"] = f"{REMOTE_REPO}:{os.environ.get('PYTHONPATH', '')}"
+    repo_path = str(REMOTE_REPO)
+    if repo_path not in sys.path:
+        sys.path.insert(0, repo_path)
+    os.environ["PYTHONPATH"] = f"{repo_path}:{os.environ.get('PYTHONPATH', '')}"
     os.environ.setdefault("HF_HOME", "/models/hf-home")
     os.environ.setdefault("HF_HUB_CACHE", "/models/hf-cache")
     os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
