@@ -1,0 +1,50 @@
+{
+  "app": "anyflow-modal-probe",
+  "cuda_visible_devices": null,
+  "generated_utc": "2026-05-13T23:01:07.264014+00:00",
+  "gpu_used": false,
+  "inference_run": false,
+  "mode": "cpu-probe",
+  "model_downloaded": false,
+  "ok": true,
+  "omegaconf_version": "2.3.0",
+  "platform": "Linux-4.4.0-x86_64-with-glibc2.36",
+  "python": "3.11.12",
+  "repo": {
+    "files": {
+      "README.md": {
+        "bytes": 5479,
+        "exists": true,
+        "sha256": "41bad2629b781ee6bdeda79463c63a9b93a0b6c221db6848c8d10729fe50a2d0"
+      },
+      "demo.py": {
+        "bytes": 7496,
+        "exists": true,
+        "sha256": "144216e1dd22b3b0a7896bb5c6d3a1dc32fa05db0d6102a259335d8a9079f171"
+      },
+      "far/main.py": {
+        "bytes": 22403,
+        "exists": true,
+        "sha256": "b2b694c4b03f03889f50996ebe901c34bf5ba180e775599969c69bd4db29eb57"
+      },
+      "options/test/anyflow/test_AnyFlow-FAR-Wan2.1-1.3B-Diffusers.yml": {
+        "bytes": 3214,
+        "exists": true,
+        "sha256": "65da0e9651c581113b67e05435455fb0288077732eafd15beca8aa1f32dc2816"
+      },
+      "options/test/anyflow/test_AnyFlow-Wan2.1-T2V-1.3B-Diffusers.yml": {
+        "bytes": 2598,
+        "exists": true,
+        "sha256": "1169f0b294eebf0ec3302fdcbab586b658f5c0e321bd38c86b9fe716cf7ae46b"
+      },
+      "requirements.txt": {
+        "bytes": 387,
+        "exists": true,
+        "sha256": "c8cd51ab48b57161d2de684c8d1dd7b9b0e7985ddaabfa3d0a031907ff83745d"
+      }
+    },
+    "root": "/tmp/anyflow_probe_repo",
+    "test_config_count": 2,
+    "train_config_count": 0
+  }
+}
