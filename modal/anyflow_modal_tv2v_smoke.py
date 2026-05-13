@@ -105,7 +105,7 @@ def run_tv2v_smoke(
     input_name: str,
     prompt: str,
     steps: int = 4,
-    frames: int = 49,
+    frames: int = 81,
     width: int = 832,
     height: int = 480,
     seed: int = 333,
@@ -214,7 +214,7 @@ def main(
     output_dir: str = "/opt/data/drops/anyflow-modal-smoke/results",
     prompt: str = "Transform this old footage into a neon cosmic Sonic-Forage pirate radio world, glowing broadcast energy, surreal sci-fi motion, cinematic camera continuity, no text, no logos.",
     steps: int = 4,
-    frames: int = 49,
+    frames: int = 81,
     seed: int = 333,
 ) -> None:
     src = Path(input_path)
@@ -222,6 +222,13 @@ def main(
         raise FileNotFoundError(src)
     out_root = Path(output_dir)
     out_root.mkdir(parents=True, exist_ok=True)
+    if frames != 81:
+        print(
+            f"Requested frames={frames}, but AnyFlow FAR 1.3B checkpoint chunk_partition sums to 21 latent frames, "
+            "which requires 81 video frames. Overriding frames=81 for this smoke lane.",
+            flush=True,
+        )
+        frames = 81
     print(f"Uploading input: {src} ({src.stat().st_size} bytes)", flush=True)
     print(f"Prompt: {prompt}", flush=True)
     print(f"Running AnyFlow TV2V smoke: steps={steps} frames={frames} seed={seed}", flush=True)
